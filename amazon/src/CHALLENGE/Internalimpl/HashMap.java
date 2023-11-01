@@ -67,6 +67,7 @@ class Main {
         map.put("two", 2);
         map.put("three", 3);
 
+
         System.out.println("Size: " + map.size());
         System.out.println("Value for 'one': " + map.get("one"));
         System.out.println("Value for 'four': " + map.get("four"));
