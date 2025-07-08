@@ -1,5 +1,7 @@
 package July2025.ds;
 
+import java.util.Arrays;
+
 public class MinHeap {
     private int[] heap;
     private int size;
@@ -62,6 +64,7 @@ public class MinHeap {
         minHeap.insert(25);
         minHeap.insert(13);
         minHeap.insert(8);
+        System.out.println(Arrays.toString(minHeap.heap));
         System.out.println("");
         for(int i=0;i<=minHeap.maxsize;i++){
             System.out.print(minHeap.extractMin()+" ");
