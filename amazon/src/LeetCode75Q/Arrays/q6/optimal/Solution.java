@@ -26,6 +26,9 @@ public class Solution {
             [2,-5,-2,-4,3]
             [2,-5,20,8,24]
             [2,-10,-2,-80,-240]
+            [2,-5,-2,-4,3]
+            [2,-5
+            [2,-10
          */
         for (int i = 1; i < nums.length; i++) {
             int tempMax = maxSoFar * nums[i];
