@@ -4,13 +4,7 @@ import java.util.Arrays;
 
 public class Solution {
     public static int findMin(int[] nums) {
-        /*
-        [4,5,6,7,0,1,2]
 
-        left middle right
-        ==============
-
-         */
         int n=nums.length;
         int minimum = Integer.MAX_VALUE;
         for (int i = 0; i < n; i++) {
