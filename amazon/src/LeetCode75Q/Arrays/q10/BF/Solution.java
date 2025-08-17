@@ -9,8 +9,8 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             for (int j = i+1; j < n; j++) {
 //              height = [1,8,6,2,5,4,8,3,7]
-               int min = Math.max(height[i],height[j]);
-                int tempMax = min * i;
+                int min = Math.min(height[i],height[j]);
+                int tempMax = min * (j-i);
                 maximum = Math.max(maximum,tempMax);
             }
         }
