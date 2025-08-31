@@ -1,4 +1,4 @@
-package LeetCode75Q.Arrays.q11.optimalSecond;
+package LeetCode75Q.TwoPointers.q11.optimal;
 
 import java.util.Arrays;
 
@@ -7,25 +7,22 @@ public class Solution {
         int n = height.length;
         if(n<3) return 0;
         int trappedWater = 0;
-        int low=0,high = n-1;
-        int lefMax=0,rightMax=0;
-        while (low<high){
-            if(height[low] < height[high]){
-                if(height[low]> lefMax){
-                    lefMax = height[low];
-                }else{
-                    trappedWater += lefMax - height[low];
-                }
-                low++;
-            }else{
-                if (height[high]>rightMax){
-                    rightMax = height[high];
-                }else{
-                    trappedWater += rightMax - height[high];
-                }
-                high--;
-            }
+        int[] leftMax = new int[n];
+        int[] rightMax = new int[n];
+        leftMax[0] = height[0];
+        rightMax[n-1] = height[n-1];
+        for (int i = 1; i < n; i++) {
+            leftMax[i] = Math.max(leftMax[i-1],height[i]);
         }
+        for (int i = n-2; i >=0; i--) {
+            rightMax[i] = Math.max(rightMax[i+1],height[i]);
+        }
+        for (int i = 0; i < n-1; i++) {
+//            formula trappedWater += min(lm,rm)-h[i]
+            trappedWater += (Math.min(leftMax[i],rightMax[i]) - height[i]);
+
+        }
+
         return trappedWater;
     }
 

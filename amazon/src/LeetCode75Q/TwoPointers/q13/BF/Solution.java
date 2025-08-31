@@ -1,8 +1,6 @@
-package LeetCode75Q.Arrays.q13.BF;
+package LeetCode75Q.TwoPointers.q13.BF;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Solution {
     public static int removeDuplicates(int[] nums) {

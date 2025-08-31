@@ -1,4 +1,4 @@
-package LeetCode75Q.Arrays.q11.BF;
+package LeetCode75Q.TwoPointers.q11.BF;
 
 import java.util.Arrays;
 

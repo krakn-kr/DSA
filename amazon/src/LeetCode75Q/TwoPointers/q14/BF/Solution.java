@@ -1,20 +1,19 @@
-package LeetCode75Q.Arrays.q14.optimal;
+package LeetCode75Q.TwoPointers.q14.BF;
 
 import java.util.Arrays;
 
 public class Solution {
     public static void moveZeroes(int[] nums) {
         int n = nums.length;
-        int j=0,k=0;
-        while (j<n) {
-            while (j<n && nums[j]!=0)j++;
-            k= j+1;
-            while (k<n && nums[k] == 0) k++;
-
-            if(k<n){
-                nums[j] = nums[k];
-                nums[k] = 0;
-            }else break;
+        int nextNonZeroElement = 0;
+        for (int i = 0; i < n; i++) {
+            if(nums[i]!=0){
+                if(i!=nextNonZeroElement){
+                    nums[nextNonZeroElement] = nums[i];
+                    nums[i] = 0;
+                }
+                nextNonZeroElement++;
+            }
         }
     }
     public static void main(String[] args) {
@@ -32,4 +31,3 @@ public class Solution {
         }
     }
 }
-

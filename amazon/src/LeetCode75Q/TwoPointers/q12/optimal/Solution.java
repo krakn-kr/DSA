@@ -1,4 +1,4 @@
-package LeetCode75Q.Arrays.q12.optimal;
+package LeetCode75Q.TwoPointers.q12.optimal;
 
 public class Solution {
     public static boolean isPalindrome(String s) {
