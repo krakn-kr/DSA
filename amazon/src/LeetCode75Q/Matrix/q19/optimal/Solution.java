@@ -5,28 +5,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
-    static class MatrixCoordinate{
-        int row;
-        int column;
-
-        public MatrixCoordinate(int row, int column) {
-            this.row = row;
-            this.column = column;
-        }
-    }
     public static void setZeroes(int[][] matrix) {
-        List<MatrixCoordinate> zeroCordinateList = new ArrayList<>();
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                if (matrix[i][j] == 0) zeroCordinateList.add(new MatrixCoordinate(i,j));
+                if (matrix[i][j] == 0){
+                    for (int k = 0; k < matrix[0].length ; k++) {
+                        if(matrix[i][k] != 0) matrix[i][k] = -10;
+                    }
+                    for (int k = 0; k < matrix.length ; k++) {
+                        if(matrix[k][j] != 0) matrix[k][j] = -10;
+                    }
+                }
             }
         }
-        for(MatrixCoordinate coordinate: zeroCordinateList){
-            for (int i = 0; i < matrix[0].length ; i++) {
-                matrix[coordinate.row][i] = 0;
-            }
-            for (int i = 0; i < matrix.length; i++) {
-                matrix[i][coordinate.column] = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == -10) matrix[i][j] = 0;
             }
         }
     }
